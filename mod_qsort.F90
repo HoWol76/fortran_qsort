@@ -3,15 +3,15 @@ module mod_qsort
   implicit none
 
   interface qsort
-    module procecure qsort_real64, qsort_real32, qsort_real16, &
+    module procedure qsort_real64, qsort_real32, &
       qsort_int64, qsort_int32, qsort_int16, qsort_int8
   end interface qsort
 
   public :: qsort
-  private :: qsort_real64, qsort_real32, , qsort_real16, &
+  private :: qsort_real64, qsort_real32, &
     qsort_int64, qsort_int32, qsort_int16, qsort_int8
 
-  private :: swap_real64, swap_real32, , swap_real16, &
+  private :: swap_real64, swap_real32, &
     swap_int64, swap_int32, swap_int16, swap_int8
 
 contains
@@ -22,10 +22,6 @@ contains
 #undef VAR_KIND
 
 #define VAR_KIND real32
-#include "qsort.inc"
-#undef VAR_KIND
-
-#define VAR_KIND real16
 #include "qsort.inc"
 #undef VAR_KIND
 #undef VAR_TYPE
