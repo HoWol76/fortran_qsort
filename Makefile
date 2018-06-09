@@ -3,7 +3,7 @@ DEBUG=-g -O2
 COPTS=$(DEBUG)
 
 SRCS=$(wildcard *.F90)
-OBJS=$(patsubst .F90,.o,$(SRCS))
+OBJS=$(patsubst %.F90,%.o,$(SRCS))
 
 .SUFFIXES:
 
