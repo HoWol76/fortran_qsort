@@ -10,7 +10,7 @@ OBJS=$(patsubst %.F90,%.o,$(SRCS))
 .SUFFIXES: .o .F90
 
 $(OBJS) : %.o : %.F90
-	$(FC) $(COPTS) -c -o $@ $^
+	$(FC) $(COPTS) -c -o $@ $<
 
 test : $(OBJS)
 	$(FC) $(COPTS) -o $@ $^
