@@ -12,6 +12,11 @@ OBJS=$(patsubst %.F90,%.o,$(SRCS))
 $(OBJS) : %.o : %.F90
 	$(FC) $(COPTS) -c -o $@ $^
 
+test : $(OBJS)
+	$(FC) $(COPTS) -o $@ $^
+
+test_qsort.o : mod_qsort.o
+
 debug :
 	@echo "SRCS = $(SRCS)"
 	@echo "OBJS = $(OBJS)"
