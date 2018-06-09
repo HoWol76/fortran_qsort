@@ -69,7 +69,7 @@ subroutine SWAP(a, i, j)
   implicit none
   VAR_TYPE(kind=VAR_KIND), intent(inout) :: a(:)
   integer, intent(in) :: i, j
-  VAR_TYPE :: t
+  VAR_TYPE(kind=VAR_KIND) :: t
 
   t = a(i)
   a(i) = a(j)
